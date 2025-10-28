@@ -15,9 +15,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Таймер</title>
+
   <style>
+    /* Подключение шрифта Pragmatica (помести файл в папку fonts) */
+    @font-face {
+      font-family: "Pragmatica";
+      src: url("fonts/Pragmatica.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Pragmatica", Arial, sans-serif;
       background: #f5f5f5;
       text-align: center;
       padding-top: 100px;
@@ -35,9 +44,9 @@
       border: 2px solid #ccc;
       border-radius: 6px;
       margin: 5px;
+      font-family: inherit;
     }
 
-    /* 🔹 Общий стиль кнопок */
     button {
       font-size: 18px;
       padding: 10px 25px;
@@ -48,6 +57,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.1s ease;
+      font-family: inherit;
     }
 
     button:hover {
@@ -60,6 +70,7 @@
       margin-top: 30px;
       color: #0072ee;
       font-weight: bold;
+      font-family: inherit;
     }
   </style>
 </head>
@@ -76,7 +87,6 @@
     </label>
   </div>
 
-  <!-- 🔹 Кнопки -->
   <div>
     <button id="startBtn">Старт</button>
     <button id="pauseBtn">Пауза</button>
@@ -103,7 +113,7 @@
     }
 
     startBtn.addEventListener('click', () => {
-      if (isRunning) return; // уже запущен
+      if (isRunning) return;
       clearInterval(countdown);
 
       if (totalSeconds === 0) {
@@ -141,7 +151,8 @@
     updateDisplay();
   </script>
 
-
+</body>
+</html>
 
   </body>
 </html>
