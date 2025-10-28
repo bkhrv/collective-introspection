@@ -1,11 +1,12 @@
 body {
-  background: #ffffff;
-  padding: 0 12px;
-  margin: 0;
-  height: 100vh;
-  color: rgb(0, 120, 217);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Pragmatica, regular;
+@font-face {
+  font-family: "Pragmatica";
+  src: url("fonts/Pragmatica.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pragmatica", Arial, sans-serif;
+}
 }
