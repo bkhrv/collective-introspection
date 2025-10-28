@@ -10,5 +10,58 @@
     <h1>коллективная интроспекция</h1>
     <img src="images/эээ.png">
 
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Таймер обратного отсчёта</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #333;
+    }
+    #timer {
+      font-size: 48px;
+      margin-top: 20px;
+      color: #0078ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Обратный отсчёт до Нового года 🎉</h1>
+  <div id="timer"></div>
+
+  <script>
+    function updateTimer() {
+      const newYear = new Date("Jan 1, 2026 00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = newYear - now;
+
+      if (diff <= 0) {
+        document.getElementById("timer").innerText = "С Новым годом! 🎆";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("timer").innerText =
+        `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
+
+
   </body>
 </html>
